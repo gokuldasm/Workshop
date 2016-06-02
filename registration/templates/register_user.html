@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load register_extras %}
 {%  load staticfiles %}
 <html lang="en">
 <head>
@@ -16,7 +17,7 @@
 <div class="panel-heading" ><b>Sign In</b></div>
 <div class="panel-body">
         <form class="form-horizontal well" id="registerForm" method="POST"
-          					enctype="multipart/form-data" action="{% url 'solution_create' %}">
+          					enctype="multipart/form-data" action="{% url 'user_signup' %}">
           					<fieldset>
           							{% csrf_token %} {% load tz %}
           							{% for field in form.visible_fields %}
