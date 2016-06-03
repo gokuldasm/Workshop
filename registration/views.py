@@ -16,6 +16,7 @@ class UserRegistrationView(AnonymousRequiredMixin, FormView):
     authenticated_redirect_url = reverse_lazy(u"home")
     form_class = UserRegistrationForm
     success_url = '/registration/user/success/'
+
     def form_valid(self, form):
         form.save()
         return FormView.form_valid(self, form)
