@@ -18,3 +18,11 @@ class UserRegistrationView(AnonymousRequiredMixin, FormView):
 def form_valid(self, form):
     form.save()
     return FormView.form_valid(self, form)
+def anonymous_required(func):
+    def as_view(request, *args, **kwargs):
+        redirect_to = kwargs.get('next', settings.LOGIN_REDIRECT_URL )
+        if request.user.is_authenticated():
+            return redirect(redirect_to)
+        response = func(request, *args, **kwargs)
+        return response
+    return as_view
