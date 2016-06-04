@@ -9,5 +9,6 @@ from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
 urlpatterns = [
 url(r'^$', UserRegistrationView.as_view(), name='user_signup'),
-
+    url(r'^user/success/', TemplateView.as_view(template_name='success.html'),
+        name='page')
 ]
