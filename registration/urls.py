@@ -11,5 +11,6 @@ urlpatterns = [
 url(r'^$', UserRegistrationView.as_view(), name='user_signup'),
     url(r'^user/success/', TemplateView.as_view(template_name='success.html'),
         name='page'),
-    url(r'^chocolate/add/',AddChocolateView.as_view(), name="add_c")
+    url(r'^chocolate/add/',AddChocolateView.as_view(), name="add_c"),
+    url(r'^chocolate/info/(?P<choco_id>\d+)/$', ChocolateDetailsView.as_view(), name="chocolate_info")
 ]

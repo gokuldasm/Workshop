@@ -8,6 +8,7 @@ from registration.forms import *
 from workshop import *
 from django.views.generic import ListView
 from registration.models import *
+from django.views.generic import DetailView
 
 # Create your views here.
 class Home(ListView):
@@ -43,3 +44,15 @@ class AddChocolateView(FormView):
     def form_valid(self, form):
         form.save()
         return FormView.form_valid(self, form)
+
+class ChocolateDetailsView(DetailView):
+    template_name = "chocolate_detail.html"
+
+    def get_object(self, queryset=None):
+        choco_id = self.kwargs['choco_id']
+        obj = Chocolate.objects.get(id=choco_id)
+        if obj:
+            return obj
+        else:
+            raise Http404("No details Found.")
+

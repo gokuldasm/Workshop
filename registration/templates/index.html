@@ -62,14 +62,13 @@
                             <li>
                                 <div class="btn-group">
                             <li><a href="{% url 'logout' %}">Signout</a></li>
-                            {% endif %}
+                        {% endif %}
                         </ul>
                         </li>
                     </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-{% for item in object_list %}
 <div class="row">
   <div class="col-xs-12 col-sm-6 col-md-8 col-md-offset-2">
 <div class="panel panel-primary">
@@ -78,20 +77,26 @@
         <th>Name</th>
         <th>Discription</th>
         <th>Manufacturer</th>
-        <th>Price</th></tr>
+        <th>Price</th>
+        <th>More</th>
+    </tr>
 
     </tr>
+    {% for item in object_list %}
     <tr>
         <td>{{item.name}}</td>
         <td>{{item.description}}</td>
         <td>{{item.manufacturer}}</td>
         <td>{{item.price}}</td>
+        <td><a href="{% url 'chocolate_info' item.id %}">Info</a></td>
     </tr>
+    {% endfor %}
 </table>
     </div>
       </div>
 </div>
-{% endfor %}
+
+
 
 {% if user.is_anonymous %}
 NOTHING TAATAAA !!! :) :p
