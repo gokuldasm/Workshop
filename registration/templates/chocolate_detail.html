@@ -8,12 +8,15 @@
 <link rel="stylesheet" href="{%  static 'css/bootstrap-theme.min.css' %}" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous"><!-- Latest compiled and minified JavaScript -->
 <script type="text/javascript" src="{%  static 'js/jquery-1.11.1.min.js' %}"></script>
 <script type="text/javascript" src="{%  static 'js/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" href="{%  static 'css/font-awesome.min.css' %}">
+
 </head>
 <body>
 <div class="row">
 <div class="col-md-6 col-md-offset-3">
 <div class="panel panel-primary">
-<div class="panel-heading" ><b>{{ object.name }}</b></div>
+<div class="panel-heading" ><b>{{ object.name }}</b>
+<i class="fa fa-gitlab" aria-hidden="true"></i></div>
 <div class="panel-body">
     <table class="table table-bordered">
         <tr>
@@ -33,6 +36,8 @@
     </div>
     </div>
     </div>
-
+<center>
+    <i class="fa fa-gitlab fa-4x" aria-hidden="true"></i>
+</center>
 </body>
 </html>
