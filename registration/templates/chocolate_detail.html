@@ -1,16 +1,38 @@
 <!DOCTYPE html>
+{% load register_extras %}
+{%  load staticfiles %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" href="{%  static 'css/bootstrap.min.css' %}" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"><!-- Optional theme -->
+<link rel="stylesheet" href="{%  static 'css/bootstrap-theme.min.css' %}" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous"><!-- Latest compiled and minified JavaScript -->
+<script type="text/javascript" src="{%  static 'js/jquery-1.11.1.min.js' %}"></script>
+<script type="text/javascript" src="{%  static 'js/bootstrap.min.js' %}"></script>
 </head>
 <body>
-<center>
-<h1><u>{{ object.name }}</u></h1>
-<br>
-<p>Description: {{ object.description }}</p>
-<p>Manufacturer: {{ object.manufacturer }}</p>
-<p>Price: {{ object.price }}</p>
-    </center>
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+<div class="panel panel-primary">
+<div class="panel-heading" ><b>{{ object.name }}</b></div>
+<div class="panel-body">
+    <table class="table table-bordered">
+        <tr>
+        <th>Description</th>
+        <td>{{ object.description }}</td>
+        </tr>
+        <tr>
+        <th>Manufacturer</th>
+        <td>{{ object.manufacturer }}</td>
+        </tr>
+        <tr>
+        <th>Price</th>
+        <td>{{ object.price }}</td>
+        </tr>
+        </table>
+    </div>
+    </div>
+    </div>
+    </div>
+
 </body>
 </html>
